@@ -1,0 +1,50 @@
+<!doctype html>
+	<!DOCTYPE html>
+	<html>
+	<head>
+		<meta charset="utf-8">
+
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+		<script> 
+			$(document).ready(function() {
+				//alert("Aproveite o site!"); 
+				$("#botaoMudar").click(function(event){
+
+					$("#lista").toggle(1000);
+					event.preventDefault();
+				});
+//não consegui fazer a requição ajax
+		});
+				</script>
+
+		<title>Trabalho JavaScript</title>
+
+	</head>
+
+	<body>
+
+		<h1> <font color="#000099"><font face="geneva"> Bem-vindos ao brechó Gato Branco! =D </font></font></h1>
+
+		<button id = "botaoMudar"><font face="geneva"> Oculte e mostre as ofertas quando quiser! </font></button>
+
+		<ul name= "lista" id= "lista">
+			<li> Óculos paris - R$ 49,99 </li>
+			<li> T-Shirt Bob Esponja - R$ 45,99 </li>
+			<li> T-Shirt Mickey - 45,99 </li>
+		</ul>
+
+		<h2><font face="geneva"> Nos siga nas redes sociais: </font></h2>
+
+        
+		<p><a href="https://github.com/EduardaMedeiros1801" name="link" id="link"><font face="geneva"> GitHub </font></a></p>
+		<ul nome="lista" id="lista"> 
+		</ul>
+
+		<p><a href="https://www.instagram.com/give.me.therapyy/" name="link2" id="link2"><font face="geneva"> IG </font></a></p>
+
+
+		
+
+	</body>
+	</html>

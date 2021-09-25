@@ -1,14 +1,17 @@
 {
-  "name": "aula10",
+  "name": "tarefa_aula11",
   "version": "0.0.1",
-  "description": "Teste versão inicial",
+  "description": "Tarefa sobre JQuery e NodeJS",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "devstart": "nodemon ."
+    "test": "Olá mundo",
+    "devstart" : "nodemon ."
   },
-  "author": "Vinícius Alves Hax",
-  "license": "ISC",
+  "keywords": [
+    "duda2021ifsul"
+  ],
+  "author": "Eduarda",
+  "license": "MIT",
   "dependencies": {
     "express": "^4.17.1"
   },

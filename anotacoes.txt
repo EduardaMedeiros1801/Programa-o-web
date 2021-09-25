@@ -1,0 +1,22 @@
+
+
+$.getJSON("http://localhost:8000/", (data, status) => {
+								if(status == "sucess"){
+									data = data['GitHub:'];
+									html_list = data.map( (elemento) => { return 
+										"<li>" + elemento["URL: "] + "</li>"
+									}); 
+
+									$("#lista").html(html_list.join(' ')); 
+								}
+							}).fail (function (){
+								alert("Ocorreu um erro");
+							});
+
+							event.preventDefault();
+				});
+
+
+
+
+event.preventDefault(); // evita que o elemento fa‡a submissäes, como um link redirecionar para uma pagina.
