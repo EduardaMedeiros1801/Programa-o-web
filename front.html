@@ -1,0 +1,127 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <script src="arquivos/jquery-3.6.0.js"></script>
+    <script>
+	$(document).ready(function() {
+		//alert("Olá mundo 2");
+		
+		$("#link").click(function( event ) {
+            		//alert("Fui clicado");
+            		$("#lista").hide();
+            		
+            		event.preventDefault();
+			});
+
+		$("#link2").click(function( event ) {
+            		//alert("Fui clicado");
+            		$("#lista").show();
+            		
+            		event.preventDefault();
+			});
+			
+		$("#link3").click(function( event ) {
+            		//alert("Fui clicado");
+            		$("#lista").toggle();
+            		
+            		event.preventDefault();
+			});
+			
+		$("#link4").click(function( event ) {
+            		//alert("Fui clicado");
+            		$("#lista2").append("<li>Item " + i + "</li>");
+			i = i+1;
+            		event.preventDefault();
+			});
+
+		$("#link5").click(function( event ) {
+            		//alert("Fui clicado");
+            		input_value = $("#entrada").val();
+            		value = $("#lista2 li").eq(input_value);
+			alert(value.html());
+            		event.preventDefault();
+			});
+
+		$("#link6").click(function( event ) {
+            		//alert("Fui clicado");
+            		input_value = $("#entrada2").val();
+            		value = $("#lista2 li").eq(input_value);
+            		if (value != undefined)
+				value.remove();
+            		event.preventDefault();
+			});
+			
+		$("#link7").click(function( event ) {
+		
+			$.getJSON(url, funcao);
+		
+            		$.getJSON("http://localhost:8000/recomendo/", (data,status) => {
+            			if (status == "success") {
+     					data = data['recomendacoes'];
+            				html_list = data.map( (elemento) => { return "<li>" + elemento["nome"] + "</li>"} );	
+            				$("#lista3").html(html_list.join(''));
+            				}
+            				
+            				
+            				
+            		}).fail( function() {
+            			alert("Ocorreu um erro");
+            		});
+            		event.preventDefault();
+			});
+
+		i = 2;
+			
+		});
+
+
+    </script>
+    <title>Demo</title>
+</head>
+<body>
+    Conteúdo
+    
+    <p><a href="#" name="link" id="link">Esconder</a></p>   
+    
+    <p><a href="#" name="link2" id="link2">Mostrar</a></p>   
+
+    <p><a href="#" name="link3" id="link3">Mudar</a></p>   
+
+
+    <ul name="lista" id="lista">
+    	<li>Item 1</li>
+    	<li>Item 2</li>
+    	<li>Item 3</li>
+    </ul>
+    
+    <hr />
+
+    <p><a href="#" name="link4" id="link4">Carregar json</a></p> 
+    
+    <p>
+    <a href="#" name="link5" id="link5">Mostrar json</a>
+    <input type="text" name="entrada" id="entrada" />
+    </p>  
+    
+    <p>
+    <a href="#" name="link6" id="link6">Deletar json</a>
+    <input type="text" name="entrada2" id="entrada2" />
+    </p>  
+
+    <p>Conteúdo json</p>
+    
+    <ul name="lista2" id="lista2">
+    	<li>Item 1</li>
+        
+    </ul>
+    
+    <hr />
+    
+    <p><a href="#" name="link7" id="link7">Carregar json remoto</a></p> 
+    
+    <ul name="lista3" id="lista3">
+    </ul>
+    
+</body>
+</html>
